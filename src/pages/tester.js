@@ -2,8 +2,11 @@ import { html, LitElement } from 'lit-element'
 import { connect } from 'pwa-helpers/connect-mixin.js'
 import { store } from '@things-factory/shell'
 
+import logo from '../../assets/images/hatiolab-logo.png'
+import banner from '../../assets/images/hatiolab-banner.jpg'
+
 class TesterViewer extends connect(store)(LitElement) {
-  static get properties() {
+  static getßproperties() {
     return {
       tester: String
     }
@@ -16,7 +19,8 @@ class TesterViewer extends connect(store)(LitElement) {
         <p>${this.tester}</p>
         <p>${this.tester}</p>
         <p>${this.tester}</p>
-        <p>${this.tester}</p>
+        <img src=${logo}></img>
+        <img src=${banner}></img>
       </section>
     `
   }
