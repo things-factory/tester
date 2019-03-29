@@ -13,7 +13,7 @@
     "serve:dev": "webpack-dev-server --config ./node_modules/@things-factory/shell/webpack.config.dev.js"
   },
   "dependencies": {
-    "@things-factory/shell": "^0.0.4"
+    "@things-factory/shell": "^0.0.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
