@@ -1,0 +1,34 @@
+{
+  "name": "@things-factory/tester",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "things-factory": {
+    "pages": {
+      "tester": "src/pages/tester.js"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "build:dev": "webpack --config ./node_modules/@things-factory/shell/webpack.config.dev.js",
+    "serve:dev": "webpack-dev-server --config ./node_modules/@things-factory/shell/webpack.config.dev.js"
+  },
+  "dependencies": {
+    "@things-factory/shell": "^0.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-proposal-decorators": "^7.4.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "copy-webpack-plugin": "^5.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
+}
