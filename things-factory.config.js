@@ -6,7 +6,7 @@ export default {
   routes: [
     {
       tagname: 'tester-viewer',
-      pageName: 'tester'
+      pageName: 'index'
     }
   ],
   bootstrap
