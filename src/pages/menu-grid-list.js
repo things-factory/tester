@@ -1,6 +1,19 @@
 import { html, css } from 'lit-element'
 
-import { PageView, PageToolbar, SharedStyles } from '@things-factory/shell'
+import { store, PageView, SharedStyles } from '@things-factory/shell'
+
+function pages() {
+  var modules = store.getState().factoryModule.modules
+  var pages = []
+
+  modules.forEach(m => {
+    m.routes && m.routes.forEach(route => {
+      pages.push(route.pageName)
+    })
+  })
+
+  return pages
+}
 
 class MenuGridList extends PageView {
   static get styles() {
@@ -66,6 +79,8 @@ class MenuGridList extends PageView {
   }
 
   render() {
+    var _pages = pages()
+
     return html`
       <page-toolbar></page-toolbar>
 
@@ -76,8 +91,8 @@ class MenuGridList extends PageView {
               html`
                 <li style="grid-row: span ${i.weight}">
                   <a
-                    href=${['/list', '/board', '/form', '/player', '/tester', '/grid-list'][
-                      Math.round(Math.random() * 100) % 5
+                    href=${_pages[
+                      Math.round(Math.random() * 100) % _pages.length
                     ]}
                     >${i.text}</a
                   >

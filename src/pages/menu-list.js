@@ -1,8 +1,22 @@
-import { html, css, LitElement, property } from 'lit-element'
+import { html, css } from 'lit-element'
+import { connect } from 'pwa-helpers/connect-mixin.js'
 
-import { PageView, PageToolbar, SharedStyles } from '@things-factory/shell'
+import { store, PageView, SharedStyles } from '@things-factory/shell'
 
-class MenuList extends PageView {
+function pages() {
+  var modules = store.getState().factoryModule.modules
+  var pages = []
+
+  modules.forEach(m => {
+    m.routes && m.routes.forEach(route => {
+      pages.push(route.pageName)
+    })
+  })
+
+  return pages
+}
+
+class MenuList extends connect(store)(PageView) {
   static get styles() {
     return [
       SharedStyles,
@@ -61,6 +75,8 @@ class MenuList extends PageView {
   }
 
   render() {
+    var _pages = pages()
+
     return html`
       <style>
         :host {
@@ -86,8 +102,8 @@ class MenuList extends PageView {
                   html`
                     <li style="height: ${i.height}px">
                       <a
-                        href=${['/list', '/board', '/form', '/player', '/tester', 'grid-list'][
-                          Math.round(Math.random() * 100) % 5
+                        href=${_pages[
+                          Math.round(Math.random() * 100) % _pages.length
                         ]}
                         >${i.text}</a
                       >
@@ -118,6 +134,8 @@ class MenuList extends PageView {
     }
 
     this._columns = []
+
+    this._pages = store
 
     window.addEventListener('resize', this.onResize.bind(this))
   }
