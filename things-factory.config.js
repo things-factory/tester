@@ -5,8 +5,13 @@ export default {
   route,
   routes: [
     {
-      tagname: 'tester-viewer',
+      /* page for default route */
+      tagname: 'menu-list',
       pageName: 'index'
+    }, 
+    {
+      tagname: 'menu-grid-list',
+      pageName: 'index-grid'
     }
   ],
   bootstrap
