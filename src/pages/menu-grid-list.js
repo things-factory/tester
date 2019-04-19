@@ -20,6 +20,17 @@ class MenuGridList extends PageView {
     return [
       SharedStyles,
       css`
+        :host {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #main {
+          flex: 1;
+
+          overflow-y: auto;
+        }
+
         #main > ul {
           display: grid;
           grid-template-columns: auto auto;
@@ -28,6 +39,7 @@ class MenuGridList extends PageView {
           padding: 0;
           margin: 0;
         }
+
         #main > ul > li {
           border: 1px solid #ccc;
           margin: var(--menu-list-item-margin);
@@ -61,20 +73,9 @@ class MenuGridList extends PageView {
     ]
   }
 
-  // @property({ type: Number })
-  // columnWidth = 320
-  // @property({ type: Array })
-  // items = []
-  // @property({ type: Number })
-  // _columnCount = 1
-  // @property({ type: Array })
-  // _columns = []
-
   static get properties() {
     return {
-      items: {
-        type: Array
-      }
+      items: Array
     }
   }
 

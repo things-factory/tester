@@ -3,6 +3,8 @@ import { connect } from 'pwa-helpers/connect-mixin.js'
 
 import { store, PageView, SharedStyles } from '@things-factory/shell'
 
+const MAX_COLUMN_COUNT = 5
+
 function pages() {
   var modules = store.getState().factoryModule.modules
   var pages = []
@@ -21,11 +23,21 @@ class MenuList extends connect(store)(PageView) {
     return [
       SharedStyles,
       css`
+        :host {
+          display: flex;
+          flex-direction: column;
+        }
+
         #main {
+          flex: 1;
+
           display: flex;
           flex-flow: row wrap;
+
           justify-content: center;
+          overflow-y: auto;
         }
+
         #main > ul {
           flex: 1;
           padding: 0;
@@ -33,25 +45,26 @@ class MenuList extends connect(store)(PageView) {
           list-style: none;
           display: flex;
           flex-direction: column;
-          width: var(--menu-list-column-width);
-          margin: var(--menu-list-column-margin);
+          margin: 5px 0;
         }
+
         #main > ul > li {
           border: 1px solid #ccc;
-          margin: var(--menu-list-item-margin);
+          margin: 0 5px;
+        }
+
+        @media (max-width: 600px) {
+          #main > ul {
+            margin: 0;
+          }
+
+          #main > ul > li {
+            margin: 0;
+          }
         }
       `
     ]
   }
-
-  // @property({ type: Number })
-  // columnWidth = 320
-  // @property({ type: Array })
-  // items = []
-  // @property({ type: Number })
-  // _columnCount = 1
-  // @property({ type: Array })
-  // _columns = []
 
   static get properties() {
     return {
@@ -78,19 +91,6 @@ class MenuList extends connect(store)(PageView) {
     var _pages = pages()
 
     return html`
-      <style>
-        :host {
-          --menu-list-item-margin: ${this.itemGap}px 0;
-          --menu-list-column-margin: 0 ${this.columnGap}px;
-        }
-
-        @media (max-width: 600px) {
-          :host {
-            --menu-list-item-margin: 0;
-            --menu-list-column-margin: 0;
-          }
-        }
-      </style>
       <page-toolbar></page-toolbar>
 
       <section id="main">
@@ -121,9 +121,6 @@ class MenuList extends connect(store)(PageView) {
     super()
 
     this.columnWidth = 320
-    this.maxColumnCount = 5
-    this.columnGap = 5
-    this.itemGap = 5
     this.items = []
 
     this.columnConfig = {
@@ -169,7 +166,7 @@ class MenuList extends connect(store)(PageView) {
     var mainEl = this.shadowRoot.getElementById('main')
     this._columnCount = Math.min(
       Math.floor(mainEl.clientWidth / (this.columnWidth + this.columnGap * 2)),
-      this.maxColumnCount
+      MAX_COLUMN_COUNT
     )
   }
 
