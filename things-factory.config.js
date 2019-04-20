@@ -6,12 +6,12 @@ export default {
   routes: [
     {
       /* page for default route */
-      tagname: 'menu-list',
-      pageName: 'index'
+      tagname: 'tester-menu-list',
+      page: 'tester-menu-list'
     }, 
     {
-      tagname: 'menu-grid-list',
-      pageName: 'index-grid'
+      tagname: 'tester-menu-grid-list',
+      page: 'tester-menu-grid-list'
     }
   ],
   bootstrap

@@ -1,11 +1,15 @@
 export default function route(page) {
   switch (page) {
     case 'index':
-      import('./pages/menu-list')
-      return true
+      /* menu-ui 모듈의 menu-list 페이지를 default page로 한다. */
+      return 'menu-list'
 
-    case 'index-grid':
-      import('./pages/menu-grid-list')
-      return true
+    case 'tester-menu-list':
+      import('./pages/tester-menu-list')
+      return page
+
+    case 'tester-menu-grid-list':
+      import('./pages/tester-menu-grid-list')
+      return page
   }
 }

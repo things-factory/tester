@@ -11,14 +11,14 @@ function pages() {
 
   modules.forEach(m => {
     m.routes && m.routes.forEach(route => {
-      pages.push(route.pageName)
+      pages.push(route.page)
     })
   })
 
   return pages
 }
 
-class MenuList extends connect(store)(PageView) {
+class TesterMenuList extends connect(store)(PageView) {
   static get styles() {
     return [
       SharedStyles,
@@ -185,4 +185,4 @@ class MenuList extends connect(store)(PageView) {
   }
 }
 
-window.customElements.define('menu-list', MenuList)
+window.customElements.define('tester-menu-list', TesterMenuList)

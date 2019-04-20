@@ -8,14 +8,14 @@ function pages() {
 
   modules.forEach(m => {
     m.routes && m.routes.forEach(route => {
-      pages.push(route.pageName)
+      pages.push(route.page)
     })
   })
 
   return pages
 }
 
-class MenuGridList extends PageView {
+class TesterMenuGridList extends PageView {
   static get styles() {
     return [
       SharedStyles,
@@ -122,4 +122,4 @@ class MenuGridList extends PageView {
   }
 }
 
-window.customElements.define('menu-grid-list', MenuGridList)
+window.customElements.define('tester-menu-grid-list', TesterMenuGridList)
