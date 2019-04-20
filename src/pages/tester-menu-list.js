@@ -91,7 +91,9 @@ class TesterMenuList extends connect(store)(PageView) {
     var _pages = pages()
 
     return html`
-      <page-toolbar></page-toolbar>
+      <page-toolbar>
+        <label>Tester Menu List</label>
+      </page-toolbar>
 
       <section id="main">
         ${this._columns.map(

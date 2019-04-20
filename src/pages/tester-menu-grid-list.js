@@ -83,7 +83,9 @@ class TesterMenuGridList extends PageView {
     var _pages = pages()
 
     return html`
-      <page-toolbar></page-toolbar>
+      <page-toolbar>
+        <label>Tester Menu Grid List</label>
+      </page-toolbar>
 
       <section id="main">
         <ul>
