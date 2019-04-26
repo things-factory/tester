@@ -10,9 +10,10 @@ function pages() {
   var pages = []
 
   modules.forEach(m => {
-    m.routes && m.routes.forEach(route => {
-      pages.push(route.page)
-    })
+    m.routes &&
+      m.routes.forEach(route => {
+        pages.push(route.page)
+      })
   })
 
   return pages
@@ -87,14 +88,16 @@ class TesterMenuList extends connect(store)(PageView) {
     }
   }
 
+  get tools() {
+    return html`
+      <label>Tester Menu List</label>
+    `
+  }
+
   render() {
     var _pages = pages()
 
     return html`
-      <page-toolbar>
-        <label>Tester Menu List</label>
-      </page-toolbar>
-
       <section id="main">
         ${this._columns.map(
           c => html`
@@ -103,12 +106,7 @@ class TesterMenuList extends connect(store)(PageView) {
                 i =>
                   html`
                     <li style="height: ${i.height}px">
-                      <a
-                        href=${_pages[
-                          Math.round(Math.random() * 100) % _pages.length
-                        ]}
-                        >${i.text}</a
-                      >
+                      <a href=${_pages[Math.round(Math.random() * 100) % _pages.length]}>${i.text}</a>
                     </li>
                   `
               )}

@@ -7,9 +7,10 @@ function pages() {
   var pages = []
 
   modules.forEach(m => {
-    m.routes && m.routes.forEach(route => {
-      pages.push(route.page)
-    })
+    m.routes &&
+      m.routes.forEach(route => {
+        pages.push(route.page)
+      })
   })
 
   return pages
@@ -79,26 +80,23 @@ class TesterMenuGridList extends PageView {
     }
   }
 
+  get tools() {
+    return html`
+      <label>Tester Menu Grid List</label>
+    `
+  }
+
   render() {
     var _pages = pages()
 
     return html`
-      <page-toolbar>
-        <label>Tester Menu Grid List</label>
-      </page-toolbar>
-
       <section id="main">
         <ul>
           ${this.items.map(
             i =>
               html`
                 <li style="grid-row: span ${i.weight}">
-                  <a
-                    href=${_pages[
-                      Math.round(Math.random() * 100) % _pages.length
-                    ]}
-                    >${i.text}</a
-                  >
+                  <a href=${_pages[Math.round(Math.random() * 100) % _pages.length]}>${i.text}</a>
                 </li>
               `
           )}
