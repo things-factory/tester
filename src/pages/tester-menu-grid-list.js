@@ -3,7 +3,7 @@ import { html, css } from 'lit-element'
 import { store, PageView, SharedStyles } from '@things-factory/shell'
 
 function pages() {
-  var modules = store.getState().factoryModule.modules
+  var modules = store.getState().app.modules
   var pages = []
 
   modules.forEach(m => {

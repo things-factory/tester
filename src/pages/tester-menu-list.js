@@ -6,7 +6,7 @@ import { store, PageView, SharedStyles } from '@things-factory/shell'
 const MAX_COLUMN_COUNT = 5
 
 function pages() {
-  var modules = store.getState().factoryModule.modules
+  var modules = store.getState().app.modules
   var pages = []
 
   modules.forEach(m => {
