@@ -80,10 +80,10 @@ class TesterMenuGridList extends PageView {
     }
   }
 
-  get tools() {
-    return html`
-      <label>Tester Menu Grid List</label>
-    `
+  get context() {
+    return {
+      title: 'TESTER-MENU-GRID-LIST'
+    }
   }
 
   render() {

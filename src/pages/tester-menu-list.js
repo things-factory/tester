@@ -88,10 +88,10 @@ class TesterMenuList extends connect(store)(PageView) {
     }
   }
 
-  get tools() {
-    return html`
-      <label>Tester Menu List</label>
-    `
+  get context() {
+    return {
+      title: 'TESTER-MENU-LIST'
+    }
   }
 
   render() {
