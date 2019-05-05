@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/tester",
-  "version": "0.1.8",
+  "version": "0.1.10",
   "main": "src/index.js",
   "things-factory": {
     "pages": {
@@ -12,11 +12,10 @@
     "serve": "things-factory",
     "serve:dev": "things-factory-dev",
     "build:client": "webpack --config node_modules/@things-factory/shell/webpack.config.js",
-    "migration": "things-factory-migration",
-    "prepublish": "npm version patch"
+    "migration": "things-factory-migration"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "@things-factory/shell": "*"
-  }
+  },
+  "devDependencies": {}
 }
