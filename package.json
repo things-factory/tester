@@ -2,6 +2,7 @@
   "name": "@things-factory/tester",
   "version": "0.1.11",
   "main": "src/index.js",
+  "browser": "src/index.js",
   "things-factory": {
     "pages": {
       "tester": "src/pages/tester.js"
