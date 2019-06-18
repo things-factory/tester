@@ -11,5 +11,9 @@ export default function route(page) {
     case 'tester-menu-grid-list':
       import('./pages/tester-menu-grid-list')
       return page
+
+    case 'static-page':
+      import('./pages/static-page')
+      return page
   }
 }

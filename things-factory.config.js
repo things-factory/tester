@@ -12,6 +12,10 @@ export default {
     {
       tagname: 'tester-menu-grid-list',
       page: 'tester-menu-grid-list'
+    },
+    {
+      tagname: 'static-page',
+      page: 'static-page'
     }
   ],
   bootstrap
