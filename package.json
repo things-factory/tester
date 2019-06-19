@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/tester",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": {
@@ -29,7 +29,6 @@
     "@things-factory/auth-provider-jwt": "*",
     "@things-factory/auth-ui-jwt": "*",
     "@things-factory/biz-test": "*",
-    "@things-factory/board-ui": "*",
     "@things-factory/export-ui-csv": "*",
     "@things-factory/export-ui-excel": "*",
     "@things-factory/i18n-ui": "*",
@@ -43,9 +42,7 @@
     "@things-factory/resource-ui": "*",
     "@things-factory/setting-ui": "*",
     "@things-factory/shell": "*",
-    "@things-factory/system-ui": "*",
-    "@things-scene/half-roundrect": "*",
-    "@things-scene/wheel-sorter": "*"
+    "@things-factory/system-ui": "*"
   },
   "devDependencies": {}
 }
