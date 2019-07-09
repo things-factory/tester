@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/tester",
-  "version": "0.1.28",
+  "version": "0.1.29",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": {
@@ -29,25 +29,23 @@
     "@things-factory/auth-provider-jwt": "*",
     "@things-factory/auth-ui-jwt": "*",
     "@things-factory/biz-test": "*",
+    "@things-factory/code-test": "*",
     "@things-factory/export-ui-csv": "*",
     "@things-factory/export-ui-excel": "*",
     "@things-factory/i18n-ui": "*",
     "@things-factory/import-ui-csv": "*",
     "@things-factory/import-ui-excel": "*",
     "@things-factory/layout-ui": "*",
+    "@things-factory/menu-test": "*",
     "@things-factory/menu-ui": "*",
     "@things-factory/more-ui": "*",
     "@things-factory/offline-ui": "*",
     "@things-factory/print-ui": "*",
+    "@things-factory/resource-test": "*",
     "@things-factory/resource-ui": "*",
+    "@things-factory/setting-test": "*",
     "@things-factory/setting-ui": "*",
     "@things-factory/shell": "*",
     "@things-factory/system-ui": "*"
-  },
-  "devDependencies": {
-    "@things-factory/code-test": "*",
-    "@things-factory/menu-test": "*",
-    "@things-factory/resource-test": "*",
-    "@things-factory/setting-test": "*"
   }
 }
