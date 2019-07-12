@@ -1,4 +1,4 @@
-import { store, UPDATE_BASE_URL, UPDATE_DEFAULT_ROUTE_PAGE } from '@things-factory/shell'
+import { store, UPDATE_BASE_URL, UPDATE_DEFAULT_ROUTE_PAGE, isMobileDevice } from '@things-factory/shell'
 
 export default function bootstrap() {
   store.dispatch({
@@ -9,6 +9,6 @@ export default function bootstrap() {
 
   store.dispatch({
     type: UPDATE_DEFAULT_ROUTE_PAGE,
-    defaultRoutePage: 'menu-list'
+    defaultRoutePage: isMobileDevice() ? 'menu-list' : 'static-page'
   })
 }

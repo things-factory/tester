@@ -1,8 +1,10 @@
+import { isMobileDevice } from '@things-factory/shell'
+
 export default function route(page) {
   switch (page) {
     case 'index':
       /* menu-ui 모듈의 menu-list 페이지를 default page로 한다. */
-      return 'menu-list'
+      return isMobileDevice() ? 'menu-list' : 'static-page'
 
     case 'tester-menu-list':
       import('./pages/tester-menu-list')
