@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/tester",
-  "version": "0.1.34",
+  "version": "0.1.35",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": {
@@ -30,6 +30,7 @@
     "@things-factory/auth-ui-jwt": "*",
     "@things-factory/biz-test": "*",
     "@things-factory/code-test": "*",
+    "@things-factory/context-ui": "*",
     "@things-factory/datasource-base": "*",
     "@things-factory/export-ui-csv": "*",
     "@things-factory/export-ui-excel": "*",
