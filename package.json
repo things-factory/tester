@@ -1,6 +1,6 @@
 {
   "name": "@things-factory/tester",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "main": "dist-server/index.js",
   "browser": "client/index.js",
   "things-factory": {
@@ -26,6 +26,7 @@
     "migration:revert": "node ./node_modules/typeorm/cli.js migration:revert"
   },
   "dependencies": {
+    "@things-factory/apptool-ui": "*",
     "@things-factory/auth-provider-jwt": "*",
     "@things-factory/auth-ui-jwt": "*",
     "@things-factory/biz-test": "*",
